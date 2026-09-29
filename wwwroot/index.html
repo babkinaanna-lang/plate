@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Make something nourishing with what is already in your kitchen. Meet Plate, your thoughtful recipe companion.">
+  <title>Plate — Make more with what you have</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="Plate home">plate<span>.</span></a>
+      <div class="nav-links">
+        <a href="#discover">Discover</a>
+        <a href="#create">Create recipe</a>
+        <a href="#saved">Saved <span class="saved-count" id="nav-saved-count">0</span></a>
+        <a href="#about">About</a>
+      </div>
+      <a class="nav-cta" href="#create">Find your next meal <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A little more delicious, every day</p>
+        <h1 id="hero-title">Turn what you have into <em>something delicious.</em></h1>
+        <p class="hero-intro">Tell us what’s in your kitchen. We’ll turn it into a healthy, delicious recipe.</p>
+        <a class="button button-dark hero-button" href="#create">Find your next meal <span aria-hidden="true">↘</span></a>
+        <div class="hero-note"><span class="note-spark" aria-hidden="true">✳</span><span>Good food starts right where you are.</span></div>
+      </div>
+      <div class="hero-visual" aria-label="A fresh seasonal meal on a sunlit table">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1400&q=85" alt="Colorful grain bowl with greens, vegetables and seeds">
+        <div class="image-caption"><span>THE EVERYDAY TABLE</span><span>01 / 03</span></div>
+        <div class="hero-stamp"><span>made for</span><strong>real life</strong><span>and what’s in it</span></div>
+      </div>
+      <div class="hero-bottomline"><span>SEASONAL THINKING. EVERYDAY COOKING.</span><span>SCROLL TO MAKE SOMETHING <span aria-hidden="true">↓</span></span></div>
+    </section>
+
+    <section class="create-section" id="create" aria-labelledby="create-title">
+      <div class="section-wrap create-inner">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> Your kitchen, reimagined</p><h2 id="create-title">Let’s see what’s <em>in the fridge.</em></h2></div>
+          <p class="heading-aside">No shopping list required.<br>Just a good place to start.</p>
+        </div>
+
+        <div class="pantry-layout">
+          <div class="pantry-main">
+            <form id="ingredient-form" class="ingredient-form" autocomplete="off">
+              <label class="sr-only" for="ingredient-input">Add an ingredient</label>
+              <span class="input-search-icon" aria-hidden="true">＋</span>
+              <input id="ingredient-input" type="text" placeholder="Add an ingredient…" list="ingredient-suggestions" aria-label="Add an ingredient">
+              <datalist id="ingredient-suggestions"></datalist>
+              <button class="add-button" type="submit">+ Add</button>
+            </form>
+            <div class="pantry-meta"><span>IN YOUR KITCHEN <span id="ingredient-total">0</span></span><button id="clear-ingredients" class="text-button" type="button">Clear all</button></div>
+            <div class="ingredient-chips" id="ingredient-chips" aria-live="polite" aria-label="Selected ingredients"></div>
+            <div class="suggested-ingredients"><span class="suggested-label">A few good staples</span><div id="quick-add-list" class="quick-add-list"></div></div>
+          </div>
+          <aside class="pantry-aside">
+            <span class="aside-number">01</span>
+            <p>Start with what you already have. A handful of ingredients is plenty.</p>
+            <div class="aside-leaf" aria-hidden="true">✳</div>
+          </aside>
+        </div>
+
+        <div class="preferences" aria-label="Recipe preferences">
+          <div class="preferences-top"><span class="eyebrow"><span class="eyebrow-line"></span> Make it yours</span><span class="preferences-hint">A few little preferences go a long way.</span></div>
+          <div class="preference-groups">
+            <fieldset class="preference-group"><legend>MEAL</legend><div class="option-row" data-filter="mealType"><button type="button" class="option is-active" data-value="any" aria-pressed="true">Any</button><button type="button" class="option" data-value="breakfast">Breakfast</button><button type="button" class="option" data-value="lunch">Lunch</button><button type="button" class="option" data-value="dinner">Dinner</button><button type="button" class="option" data-value="snack">Snack</button><button type="button" class="option" data-value="dessert">Dessert</button></div></fieldset>
+            <fieldset class="preference-group"><legend>DIET</legend><div class="option-row" data-filter="diet"><button type="button" class="option is-active" data-value="any" aria-pressed="true">No preference</button><button type="button" class="option" data-value="high protein">High protein</button><button type="button" class="option" data-value="low calorie">Low calorie</button><button type="button" class="option" data-value="vegetarian">Vegetarian</button><button type="button" class="option" data-value="vegan">Vegan</button><button type="button" class="option" data-value="gluten-free">Gluten-free</button></div></fieldset>
+            <fieldset class="preference-group"><legend>TIME</legend><div class="option-row" data-filter="time"><button type="button" class="option is-active" data-value="any" aria-pressed="true">Any time</button><button type="button" class="option" data-value="15">Under 15 min</button><button type="button" class="option" data-value="30">15–30 min</button><button type="button" class="option" data-value="60">30–60 min</button></div></fieldset>
+            <fieldset class="preference-group"><legend>EFFORT</legend><div class="option-row" data-filter="difficulty"><button type="button" class="option is-active" data-value="any" aria-pressed="true">Any level</button><button type="button" class="option" data-value="Easy">Easy</button><button type="button" class="option" data-value="Medium">Medium</button><button type="button" class="option" data-value="Advanced">Advanced</button></div></fieldset>
+          </div>
+          <button id="generate-button" class="button button-dark generate-button" type="button"><span>Create my recipe</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+          <p class="generate-hint">A little inspiration, made from your ingredients.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section section-wrap" id="discover" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> A fresh take on what you have</p><h2 id="results-title">A good thing is <em>cooking.</em></h2></div>
+        <p class="result-count" id="result-count">Your recipes will find their way here.</p>
+      </div>
+      <div id="results-feedback" class="results-feedback" aria-live="polite"></div>
+      <div id="recipe-grid" class="recipe-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <span class="empty-mark" aria-hidden="true">✳</span><h3>You’re almost there.</h3><p id="empty-message">A couple more ingredients could open up something lovely.</p><div id="near-match-list" class="near-match-list"></div>
+      </div>
+    </section>
+
+    <section class="saved-section" id="saved" aria-labelledby="saved-title">
+      <div class="section-wrap">
+        <div class="saved-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Kept for another day</p><h2 id="saved-title">Your little <em>recipe box.</em></h2></div><span id="saved-section-count" class="saved-section-count">0 saved</span></div>
+        <div id="saved-grid" class="recipe-grid saved-grid"></div>
+        <div id="saved-empty" class="saved-empty"><span aria-hidden="true">↗</span><p>Recipes you save will live here, ready when you are.</p></div>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
+      <span class="about-mark" aria-hidden="true">p.</span><div><p class="eyebrow"><span class="eyebrow-line"></span> A more thoughtful table</p><h2 id="about-title">Less waste.<br><em>More lovely meals.</em></h2></div><p class="about-copy">Plate makes everyday cooking feel a little more possible. Start with what’s close at hand, make it your own, and enjoy the good things that follow.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="privacy"><div class="section-wrap footer-inner"><a class="wordmark" href="#top">plate<span>.</span></a><p>Make more with what you have.</p><div class="footer-links"><a href="#about">About</a><a href="#privacy">Privacy</a><a href="mailto:hello@plate.kitchen">Contact</a></div><span class="copyright">© 2026 PLATE</span></div></footer>
+
+  <div class="modal-backdrop" id="recipe-modal" hidden>
+    <section class="recipe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close recipe">×</button>
+      <div class="modal-content" id="modal-content"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
